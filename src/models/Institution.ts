@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import IInstitution from "../interfaces/IInstitution";
 
 const InstitutionSchema = new mongoose.Schema({
     Name: {
@@ -15,6 +16,6 @@ const InstitutionSchema = new mongoose.Schema({
     }
 });
 
-const Institution = mongoose.model("Institution", InstitutionSchema);
+const Institution = mongoose.model<IInstitution>("Institution", InstitutionSchema);
 
 export default Institution;

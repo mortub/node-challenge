@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose  from "mongoose";
 import config from './config/config';
+import bodyParser from 'body-parser';
 
 import { usersRouter } from './routes/Users';
 import { booksRouter } from './routes/Books';
@@ -14,6 +15,7 @@ db.once("open", function () {
   console.log("Connected successfully");
 });
 
+app.use(bodyParser.json());
 app.use(router,usersRouter);
 app.use(router,booksRouter);
 

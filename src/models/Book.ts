@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import IBook from "../interfaces/IBook";
 
 const BookSchema = new mongoose.Schema({
     ISBN: {
@@ -15,6 +16,6 @@ const BookSchema = new mongoose.Schema({
     }
 });
 
-const Book = mongoose.model("Book", BookSchema);
+const Book = mongoose.model<IBook>("Book", BookSchema);
 
 export default Book;
