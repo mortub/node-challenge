@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose  from "mongoose";
-import config from './config/config';
+import config from './config/dotenvConfig';
 import bodyParser from 'body-parser';
 
 import { usersRouter } from './routes/Users';
