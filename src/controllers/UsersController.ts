@@ -62,7 +62,7 @@ export default class UsersController {
     }
 
     saveTokenInDB = async (email: string) => {
-        const token = Authentication.generateToken();
+        const token = Authentication.generateToken(email);
         const userToken = new UserToken({
             _id: new mongoose.Types.ObjectId(),
             Token: token,

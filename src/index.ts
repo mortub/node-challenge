@@ -2,6 +2,8 @@ import express from 'express';
 import mongoose  from "mongoose";
 import config from './config/dotenvConfig';
 import bodyParser from 'body-parser';
+import passport from "passport";
+import Authentication from './authentication/authentication';
 
 import { usersRouter } from './routes/Users';
 import { booksRouter } from './routes/Books';
@@ -14,6 +16,8 @@ db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
 });
+
+passport.use(Authentication.createBearerStrategy());
 
 app.use(bodyParser.json());
 app.use(router,usersRouter);
