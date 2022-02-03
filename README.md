@@ -22,7 +22,6 @@ The body needs to be of type JSON and needs to include:
 
 The created token for the user is returned.
 
-################################################
 The possible University domains are:
 technion.ac.il
 huji.ac.il
